@@ -50,6 +50,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jButton_cadatrar_estudantes = new javax.swing.JButton();
         jButton_pular = new javax.swing.JButton();
+        jButton_deletarCpf = new javax.swing.JButton();
         jLabel_logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -124,7 +125,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
         jButton_cadatrar_estudantes.setBackground(new java.awt.Color(0, 102, 0));
         jButton_cadatrar_estudantes.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jButton_cadatrar_estudantes.setForeground(new java.awt.Color(153, 0, 51));
-        jButton_cadatrar_estudantes.setText("Cadastrar");
+        jButton_cadatrar_estudantes.setText("OK");
         jButton_cadatrar_estudantes.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton_cadatrar_estudantesMouseClicked(evt);
@@ -145,7 +146,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
         jButton_pular.setBackground(new java.awt.Color(0, 102, 0));
         jButton_pular.setFont(new java.awt.Font("sansserif", 1, 14)); // NOI18N
         jButton_pular.setForeground(new java.awt.Color(153, 0, 51));
-        jButton_pular.setText("Pular ");
+        jButton_pular.setText("Cadastrar Pauta");
         jButton_pular.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton_pularMouseClicked(evt);
@@ -154,6 +155,16 @@ public class CadastroUsuario extends javax.swing.JFrame {
         jButton_pular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton_pularActionPerformed(evt);
+            }
+        });
+
+        jButton_deletarCpf.setBackground(new java.awt.Color(0, 102, 0));
+        jButton_deletarCpf.setFont(new java.awt.Font("sansserif", 1, 12)); // NOI18N
+        jButton_deletarCpf.setForeground(new java.awt.Color(153, 0, 0));
+        jButton_deletarCpf.setText("Deletar ");
+        jButton_deletarCpf.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton_deletarCpfMouseClicked(evt);
             }
         });
 
@@ -168,15 +179,17 @@ public class CadastroUsuario extends javax.swing.JFrame {
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(35, 35, 35)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jButton_cadatrar_estudantes, javax.swing.GroupLayout.PREFERRED_SIZE, 121, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jButton_pular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton_cadatrar_estudantes, javax.swing.GroupLayout.PREFERRED_SIZE, 164, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton_pular, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTextField1_cpf))
-                        .addGap(0, 45, Short.MAX_VALUE)))
+                                .addComponent(jTextField1_cpf)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton_deletarCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -187,11 +200,12 @@ public class CadastroUsuario extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1_cpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
+                    .addComponent(jLabel1)
+                    .addComponent(jButton_deletarCpf))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton_cadatrar_estudantes)
-                    .addComponent(jButton_pular))
+                    .addComponent(jButton_pular)
+                    .addComponent(jButton_cadatrar_estudantes))
                 .addContainerGap(25, Short.MAX_VALUE))
         );
 
@@ -203,7 +217,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(100, Short.MAX_VALUE)
                 .addComponent(jLabel_logo, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(33, 33, 33)
                 .addComponent(jLabel_minimize, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -370,6 +384,33 @@ public class CadastroUsuario extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_jButton_pularActionPerformed
 
+    private void jButton_deletarCpfMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_deletarCpfMouseClicked
+       PreparedStatement st;
+
+        String cpf = jTextField1_cpf.getText();
+
+        String query = "DELETE FROM estudantes WHERE cpf = ?";
+
+        try {
+            st = (PreparedStatement) My_Connection.getConnection().prepareStatement(query);
+
+            st.setString(1, cpf);
+
+            int linhasAfetadas = st.executeUpdate();
+
+            if (linhasAfetadas > 0) {
+                // A inserção foi bem-sucedida, você pode realizar ações adicionais aqui
+                System.out.println("Exclusão da pauta bem-sucedida!");
+            } else {
+                // A inserção falhou
+                System.out.println("A inserção falhou.");
+            }
+
+        } catch (SQLException ex) {
+            Logger.getLogger(CadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jButton_deletarCpfMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -407,6 +448,7 @@ public class CadastroUsuario extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton_cadatrar_estudantes;
+    private javax.swing.JButton jButton_deletarCpf;
     private javax.swing.JButton jButton_pular;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

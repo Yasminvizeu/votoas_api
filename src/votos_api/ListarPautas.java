@@ -17,19 +17,23 @@ import javax.swing.border.Border;
  *
  * @author yasmi
  */
-public class CadastroPautas extends javax.swing.JFrame {
+public class ListarPautas extends javax.swing.JFrame {
 
     /**
      * Creates new form CadastroUsuario
      */
-    public CadastroPautas() {
+    public ListarPautas() {
         initComponents();
 
         Border label_border = BorderFactory.createMatteBorder(1, 1, 1, 1, Color.black);
         jLabel_minimize.setBorder(label_border);
         jLabel_close.setBorder(label_border);
+        
+       // ListarPautas();
+        
 
     }
+   
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -46,14 +50,8 @@ public class CadastroPautas extends javax.swing.JFrame {
         jLabel_minimize = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jTextField_titulo = new javax.swing.JTextField();
-        jTextField_descricao = new javax.swing.JTextField();
-        jButton_alterar = new javax.swing.JButton();
-        jButton_inserirPauta = new javax.swing.JButton();
-        jButton_deletarPauta = new javax.swing.JButton();
-        listarPautas = new javax.swing.JButton();
+        configurarSessao = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
         jLabel_logo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -102,66 +100,27 @@ public class CadastroPautas extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Arial Black", 3, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(204, 0, 0));
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("Cadastro Pautas ");
+        jLabel2.setText("Pautas cadastradas");
 
-        jLabel1.setForeground(new java.awt.Color(153, 0, 51));
-        jLabel1.setText("Título");
-
-        jLabel3.setForeground(new java.awt.Color(153, 0, 0));
-        jLabel3.setText("Descrição");
-
-        jTextField_titulo.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField_titulo.setForeground(new java.awt.Color(153, 0, 0));
-        jTextField_titulo.setText("Título da pauta");
-        jTextField_titulo.setToolTipText("");
-
-        jTextField_descricao.setBackground(new java.awt.Color(204, 204, 204));
-        jTextField_descricao.setForeground(new java.awt.Color(153, 0, 51));
-        jTextField_descricao.setText("Descrição da pauta");
-
-        jButton_alterar.setBackground(new java.awt.Color(0, 102, 0));
-        jButton_alterar.setForeground(new java.awt.Color(153, 0, 51));
-        jButton_alterar.setText("Alterar");
-        jButton_alterar.addActionListener(new java.awt.event.ActionListener() {
+        configurarSessao.setBackground(new java.awt.Color(0, 102, 0));
+        configurarSessao.setForeground(new java.awt.Color(153, 0, 51));
+        configurarSessao.setText("Configurar Sessao");
+        configurarSessao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_alterarActionPerformed(evt);
+                configurarSessaoActionPerformed(evt);
             }
         });
 
-        jButton_inserirPauta.setBackground(new java.awt.Color(0, 102, 0));
-        jButton_inserirPauta.setForeground(new java.awt.Color(153, 0, 51));
-        jButton_inserirPauta.setText("Inserir");
-        jButton_inserirPauta.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton_inserirPautaMouseClicked(evt);
-            }
-        });
-        jButton_inserirPauta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_inserirPautaActionPerformed(evt);
-            }
-        });
-
-        jButton_deletarPauta.setBackground(new java.awt.Color(0, 102, 0));
-        jButton_deletarPauta.setForeground(new java.awt.Color(153, 0, 51));
-        jButton_deletarPauta.setText("Deletar");
-        jButton_deletarPauta.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton_deletarPautaMouseClicked(evt);
-            }
-        });
-        jButton_deletarPauta.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton_deletarPautaActionPerformed(evt);
-            }
-        });
-
-        listarPautas.setText("Listar Pautas");
-        listarPautas.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                listarPautasActionPerformed(evt);
-            }
-        });
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 278, Short.MAX_VALUE)
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -173,48 +132,23 @@ public class CadastroPautas extends javax.swing.JFrame {
                         .addContainerGap()
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(24, 24, 24)
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jTextField_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 210, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jButton_inserirPauta, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jTextField_descricao, javax.swing.GroupLayout.DEFAULT_SIZE, 210, Short.MAX_VALUE)
-                                    .addComponent(listarPautas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addGap(139, 139, 139)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jButton_alterar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jButton_deletarPauta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))))
+                        .addGap(53, 53, 53)
+                        .addComponent(configurarSessao, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)))
                 .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(88, 88, 88))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField_titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton_inserirPauta)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField_descricao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton_deletarPauta)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton_alterar)
-                    .addComponent(listarPautas))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 8, Short.MAX_VALUE)
+                .addComponent(configurarSessao))
         );
 
         jLabel_logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -318,83 +252,9 @@ public class CadastroPautas extends javax.swing.JFrame {
     private void jLabel_closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel_closeMouseClicked
         System.exit(0);    }//GEN-LAST:event_jLabel_closeMouseClicked
 
-    private void jButton_alterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_alterarActionPerformed
+    private void configurarSessaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_configurarSessaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton_alterarActionPerformed
-
-    private void jButton_inserirPautaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_inserirPautaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton_inserirPautaActionPerformed
-
-    private void jButton_deletarPautaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_deletarPautaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton_deletarPautaActionPerformed
-
-    private void jButton_inserirPautaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_inserirPautaMouseClicked
-        PreparedStatement st;
-
-        String titulo = jTextField_titulo.getText();
-        String descricao = jTextField_descricao.getText();
-
-        String query = "INSERT INTO pautas (titulo,descricao) VALUES (?,?)";
-
-        try {
-            st = (PreparedStatement) My_Connection.getConnection().prepareStatement(query);
-
-            st.setString(1, titulo);
-            st.setString(2, descricao);
-
-            int linhasAfetadas = st.executeUpdate();
-
-            if (linhasAfetadas > 0) {
-                // A inserção foi bem-sucedida, você pode realizar ações adicionais aqui
-                System.out.println("Inserção bem-sucedida!");
-            } else {
-                // A inserção falhou
-                System.out.println("A inserção falhou.");
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(CadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jButton_inserirPautaMouseClicked
-
-    private void jButton_deletarPautaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton_deletarPautaMouseClicked
-        PreparedStatement st;
-
-        String titulo = jTextField_titulo.getText();
-
-        String query = "DELETE FROM pautas WHERE titulo = ?";
-
-        try {
-            st = (PreparedStatement) My_Connection.getConnection().prepareStatement(query);
-
-            st.setString(1, titulo);
-
-            int linhasAfetadas = st.executeUpdate();
-
-            if (linhasAfetadas > 0) {
-                // A inserção foi bem-sucedida, você pode realizar ações adicionais aqui
-                System.out.println("Exclusão da pauta bem-sucedida!");
-            } else {
-                // A inserção falhou
-                System.out.println("A inserção falhou.");
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(CadastroUsuario.class.getName()).log(Level.SEVERE, null, ex);
-        }
-
-    }//GEN-LAST:event_jButton_deletarPautaMouseClicked
-
-    private void listarPautasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarPautasActionPerformed
-        ListarPautas listarPautas = new ListarPautas();
-        listarPautas.setVisible(true);
-        this.setVisible(false);
-
-
-
-    }//GEN-LAST:event_listarPautasActionPerformed
+    }//GEN-LAST:event_configurarSessaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -413,40 +273,36 @@ public class CadastroPautas extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(CadastroPautas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListarPautas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(CadastroPautas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListarPautas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(CadastroPautas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListarPautas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(CadastroPautas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(ListarPautas.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new CadastroPautas().setVisible(true);
+                new ListarPautas().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton_alterar;
-    private javax.swing.JButton jButton_deletarPauta;
-    private javax.swing.JButton jButton_inserirPauta;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton configurarSessao;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel_close;
     private javax.swing.JLabel jLabel_logo;
     private javax.swing.JLabel jLabel_minimize;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JTextField jTextField_descricao;
-    private javax.swing.JTextField jTextField_titulo;
-    private javax.swing.JButton listarPautas;
+    private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
 }
